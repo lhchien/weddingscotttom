@@ -90,7 +90,6 @@ h1{
   position: absolute;
   width: 5px;
   height: 5px;
-  background-color: #ffffff; /* Màu trắng */
   border-radius: 50%;
   animation: fallingSnow linear infinite;
 }
@@ -174,8 +173,12 @@ function toggleMusic() {
 }
 
   function createSnowflake() {
+  const colors = ["#ffffff", "#ff0000", "#00ff00", "#0000ff", "#ffff00"]; // Danh sách màu sắc
+  const randomColor = colors[Math.floor(Math.random() * colors.length)]; // Chọn ngẫu nhiên một màu từ danh sách
+
   const snowflake = document.createElement("div");
   snowflake.classList.add("snowflake");
+  snowflake.style.backgroundColor = randomColor; // Đặt màu sắc cho chấm tuyết
   snowflake.style.left = Math.random() * window.innerWidth + "px";
   document.getElementById("snowflakes-container").appendChild(snowflake);
 
