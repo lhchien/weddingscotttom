@@ -69,6 +69,20 @@ h1{
     background-position: 0% 50%;
   }
 }
+
+  .floating-button {
+  position: fixed;
+  top: 20px; /* Điều chỉnh khoảng cách từ trên xuống */
+  left: 20px; /* Điều chỉnh khoảng cách từ trái sang phải */
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50; /* Màu nền của nút */
+  color: white; /* Màu chữ trắng */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 999; /* Đảm bảo button hiển thị trên top của các phần tử khác */
+}
   
 </style>
 </head>
@@ -88,7 +102,7 @@ Wedding
   <source src="scott-n-tom-song.mp3" type="audio/mpeg">
 </audio>
 
-<button onclick="toggleMusic()">Play Music</button>
+<button onclick="toggleMusic()" class="floating-button">Play Music</button>
 
   <img id="myImage" src="scott-n-tom.jpeg" alt="Image" width="250px">
 
