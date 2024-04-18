@@ -90,6 +90,8 @@ Wedding
   <source src="scott-n-tom-song.mp3" type="audio/mpeg">
 </audio>
 
+<button onclick="toggleMusic()">Play Music</button>
+
  
 
 <script>
@@ -119,6 +121,19 @@ const interval = setInterval(function() {
         document.getElementById("countdown").innerHTML = 'The Wedding Day has arrived!';
     }
 }, 1000); // Cập nhật mỗi giây
+
+
+  const audio = document.getElementById("myAudio");
+
+function toggleMusic() {
+  if (audio.paused) {
+    audio.play();
+    document.querySelector("button").textContent = "Pause Music";
+  } else {
+    audio.pause();
+    document.querySelector("button").textContent = "Play Music";
+  }
+}
 </script>
 
 </body>
