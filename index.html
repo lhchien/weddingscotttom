@@ -85,10 +85,30 @@ h1{
   z-index: 999; /* Đảm bảo button hiển thị trên top của các phần tử khác */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng mờ */
 }
+
+  .snowflake {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #ffffff; /* Màu trắng */
+  border-radius: 50%;
+  animation: fallingSnow linear infinite;
+}
+
+@keyframes fallingSnow {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(110vh);
+  }
+}
   
 </style>
 </head>
 <body>
+
+  <div id="snowflakes-container"></div>
   
 <h3>
 Wedding
@@ -152,6 +172,23 @@ function toggleMusic() {
     document.querySelector("button").textContent = "Play Music";
   }
 }
+
+  function createSnowflake() {
+  const snowflake = document.createElement("div");
+  snowflake.classList.add("snowflake");
+  snowflake.style.left = Math.random() * window.innerWidth + "px";
+  document.getElementById("snowflakes-container").appendChild(snowflake);
+
+  const animationDuration = Math.random() * 5 + 5; // Thời gian rơi từ 5 đến 10 giây
+  snowflake.style.animationDuration = animationDuration + "s";
+
+  setTimeout(() => {
+    snowflake.remove(); // Xóa chấm tuyết sau khi rơi xuống đáy màn hình
+  }, animationDuration * 1000);
+}
+
+setInterval(createSnowflake, 500); // Tạo một chấm tuyết mới mỗi 0.5 giây
+  
 </script>
 
 </body>
