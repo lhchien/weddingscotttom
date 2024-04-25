@@ -70,11 +70,15 @@ h1{
   }
 }
 
-  .floating-button {
+  .btn-play{
   position: fixed;
   bottom: 20px; /* Điều chỉnh khoảng cách từ dưới lên */
   left: 50%;
   transform: translateX(-50%);
+  }
+  
+  .floating-button {
+    margin: 0px 10px;
   padding: 10px 20px;
   font-size: 16px;
   background-color: #43766C; /* Màu nền của nút */
@@ -103,9 +107,7 @@ h1{
   }
 }
 
-  .btn-play{
-  position: absolute;
-  }
+  
   
 </style>
 </head>
@@ -131,12 +133,8 @@ Wedding
   <source src="My-Love-Song.mp3" type="audio/mpeg">
 </audio>
  <div class="btn-play">
-   <div class="sub-btn">
      <button onclick="toggleMusic()" class="floating-button">Play Music 1</button>
-   </div>
-   <div class="sub-btn">
      <button onclick="toggleMusic2()" class="floating-button">Play Music 2</button>
-   </div>
  </div>
 
   
