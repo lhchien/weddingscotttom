@@ -119,11 +119,16 @@ Wedding
   <p id="countdown" class="count"></p>
 </div>
 
-  <audio id="myAudio" autoplay loop>
+  <audio id="Audio1" autoplay loop>
   <source src="scott-n-tom-song.mp3" type="audio/mpeg">
 </audio>
 
-<button onclick="toggleMusic()" class="floating-button">Play Music</button>
+  <audio id="Audio2" autoplay loop>
+  <source src="scott-n-tom-song.mp3" type="audio/mpeg">
+</audio>
+  
+<button onclick="toggleMusic()" class="floating-button">Play Music 1</button>
+  <button onclick="toggleMusic2()" class="floating-button">Play Music 2</button>
 
   <img id="myImage" src="hinh.jpeg" alt="Image" width="350px">
 
@@ -160,7 +165,8 @@ const interval = setInterval(function() {
 }, 1000); // Cập nhật mỗi giây
 
 
-  const audio = document.getElementById("myAudio");
+  const audio = document.getElementById("Audio1");
+  const audio2 = document.getElementById("Audio2");
 
 function toggleMusic() {
   if (audio.paused) {
@@ -168,6 +174,16 @@ function toggleMusic() {
     document.querySelector("button").textContent = "Pause Music";
   } else {
     audio.pause();
+    document.querySelector("button").textContent = "Play Music";
+  }
+}
+
+  function toggleMusic2() {
+  if (audio2.paused) {
+    audio2.play();
+    document.querySelector("button").textContent = "Pause Music";
+  } else {
+    audio2.pause();
     document.querySelector("button").textContent = "Play Music";
   }
 }
