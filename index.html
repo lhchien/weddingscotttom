@@ -102,6 +102,10 @@ h1{
     transform: translateY(110vh);
   }
 }
+
+  .btn-play{
+  position: absolute;
+  }
   
 </style>
 </head>
@@ -126,9 +130,16 @@ Wedding
   <audio id="Audio2" autoplay loop>
   <source src="My-Love-Song.mp3" type="audio/mpeg">
 </audio>
+ <div class="btn-play">
+   <div class="sub-btn">
+     <button onclick="toggleMusic()" class="floating-button">Play Music 1</button>
+   </div>
+   <div class="sub-btn">
+     <button onclick="toggleMusic2()" class="floating-button">Play Music 2</button>
+   </div>
+ </div>
+
   
-<button onclick="toggleMusic()" class="floating-button">Play Music 1</button>
-  <button onclick="toggleMusic2()" class="floating-button">Play Music 2</button>
 
   <img id="myImage" src="hinh.jpeg" alt="Image" width="350px">
 
